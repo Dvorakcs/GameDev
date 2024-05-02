@@ -2,7 +2,7 @@ class EngineSprite extends EngineAnimationSprite{
     constructor(imageUrl,position,size,cutSize,
         sizeFrame,limitFrame,isAnimation
     ){
-        super()
+        super(isAnimation,timeMax,limitFrame)
         this.position = position;
         this.size = size;       
         this.imagesSprites = {}
@@ -11,14 +11,7 @@ class EngineSprite extends EngineAnimationSprite{
         this.cutSize = cutSize;
         this.sizeFrame = sizeFrame;
         this.frame = 0;
-        this.limitFrame = limitFrame;
-
-        this.time = 0;
-        this.timeMax = 8
-        this.isAnimation = isAnimation ?? false;
-
-
-
+        
         this.LoadSprite(imageUrl)
     }
      
@@ -40,19 +33,7 @@ class EngineSprite extends EngineAnimationSprite{
     }
 
     UPDATE(event){
-      
         this.frame = super.UPDATE(event)
-       /* if(this.isAnimation){
-        if(this.time > this.timeMax){
-            this.time = 0
-            this.frame += 1
-        }
-
-        if(this.frame > this.limitFrame){
-            this.frame = 0
-        }
-        this.time++;
-       }*/
     }
 
     DRAW(event){
