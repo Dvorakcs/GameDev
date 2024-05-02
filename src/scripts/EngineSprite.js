@@ -40,7 +40,9 @@ class EngineSprite extends EngineAnimationSprite{
     }
 
     UPDATE(event){
-       if(this.isAnimation){
+      
+        this.frame = super.UPDATE(event)
+       /* if(this.isAnimation){
         if(this.time > this.timeMax){
             this.time = 0
             this.frame += 1
@@ -50,7 +52,7 @@ class EngineSprite extends EngineAnimationSprite{
             this.frame = 0
         }
         this.time++;
-       }
+       }*/
     }
 
     DRAW(event){
