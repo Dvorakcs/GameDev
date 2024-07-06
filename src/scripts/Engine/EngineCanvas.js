@@ -29,4 +29,18 @@ class EngineCanvas{
             objectTextContext.position.x + (objectTextContext.size.x / 2) - (textWidth/2), 
             objectTextContext.position.y + (objectTextContext.size.y / 2) + (fontBoundingBoxAscent/2));
     }
+    InvertWindow(scale,position,size,imagesSprites,sizeFrame,frame,cutSize){
+        this.context.save()
+        this.context.scale(scale.x,scale.y)
+        this.context.drawImage(
+            imagesSprites,
+            sizeFrame.x * frame,sizeFrame.y,
+            cutSize.x,cutSize.y,
+            position.x,
+            position.y, 
+            size.x,
+            size.y)
+
+           this.context.restore();
+       }
 }
